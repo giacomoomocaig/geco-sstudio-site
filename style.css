@@ -398,4 +398,20 @@ h1 {
     grid-template-columns: 1fr;
     gap: 18px;
   }
+
+  .message-template {
+  margin-top: 14px;
+  padding: 18px;
+  border-radius: 14px;
+  background: #11151b;
+  border: 1px solid #2a2f38;
+}
+
+.message-template p {
+  margin: 0 0 12px;
+}
+
+.message-template p:last-child {
+  margin-bottom: 0;
+}
 }

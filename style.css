@@ -161,7 +161,8 @@ a {
 h1 {
   margin: 0;
   font-size: 52px;
-  line-height: 1.05;
+  line-height: 1.06;
+  letter-spacing: -0.02em;
 }
 
 .subtitle {
@@ -180,15 +181,16 @@ h1 {
 
 .button {
   display: inline-block;
-  padding: 12px 18px;
-  border-radius: 12px;
+  padding: 13px 20px;
+  border-radius: 14px;
   font-weight: bold;
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .button:hover {
   opacity: 0.95;
   transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
 }
 
 .button-primary {
@@ -204,10 +206,11 @@ h1 {
 
 .card {
   margin-top: 36px;
-  padding: 28px;
-  border: 1px solid #2a2f38;
-  border-radius: 18px;
+  padding: 30px;
+  border: 1px solid #2c3440;
+  border-radius: 20px;
   background: #171b22;
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.14);
 }
 
 .card h2 {
@@ -354,7 +357,8 @@ h1 {
   }
 
   h1 {
-    font-size: 38px;
+  font-size: 36px;
+  line-height: 1.08;
   }
 
   .card {
@@ -416,13 +420,13 @@ h1 {
 
 .hero {
 
-  padding: 56px 0 28px;
+  padding: 56px 0 32px;
 
 }
 
 .hero-image-block {
 
-  margin-top: 34px;
+  margin-top: 36px;
 
 }
 
@@ -436,10 +440,10 @@ h1 {
 
   height: auto;
 
-  border-radius: 20px;
+  border-radius: 22px;
 
-  border: 1px solid #2a2f38;
+  border: 1px solid #2d3440;
 
-  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.28);
+  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.30);
 
 }

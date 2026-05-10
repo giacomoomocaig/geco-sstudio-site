@@ -52,7 +52,7 @@ a {
 }
 
 .brand-logo {
-  width: 54px;
+  width: 46px;
   height: auto;
   display: block;
   flex-shrink: 0;
@@ -160,7 +160,7 @@ a {
 
 h1 {
   margin: 0;
-  font-size: 56px;
+  font-size: 52px;
   line-height: 1.05;
 }
 
@@ -416,13 +416,13 @@ h1 {
 
 .hero {
 
-  padding: 40px 0 28px;
+  padding: 56px 0 28px;
 
 }
 
 .hero-image-block {
 
-  margin-top: 30px;
+  margin-top: 34px;
 
 }
 

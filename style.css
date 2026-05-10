@@ -186,17 +186,19 @@ h1 {
 }
 
 .contact-box {
-  margin-top: 20px;
-  padding: 20px;
-  border-radius: 14px;
-  background: #11151b;
-  border: 1px solid #2a2f38;
+  margin-top: 24px;
+  padding: 22px;
+  border-radius: 16px;
+  background: #1d2330;
+  border: 1px solid #3a4454;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
 }
 
 .contact-box h3 {
   margin-top: 0;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   font-size: 22px;
+  color: #ffffff;
 }
 
 .contact-note {

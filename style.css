@@ -398,4 +398,17 @@ h1 {
     grid-template-columns: 1fr;
     gap: 18px;
   }
+
+.footer-grid > div {
+  min-width: 0;
+}
+
+.footer-grid a {
+  color: #d7dbe0;
+  text-decoration: none;
+}
+
+.footer-grid a:hover {
+  color: #ffffff;
+}
 }

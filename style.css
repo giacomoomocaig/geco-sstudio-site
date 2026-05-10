@@ -377,6 +377,10 @@ h1 {
   gap: 24px;
 }
 
+.footer-grid > div {
+  min-width: 0;
+}
+
 .footer-grid h3 {
   margin-top: 0;
   margin-bottom: 10px;
@@ -386,6 +390,15 @@ h1 {
 
 .footer-grid p {
   margin: 0 0 8px;
+}
+
+.footer-grid a {
+  color: #d7dbe0;
+  text-decoration: none;
+}
+
+.footer-grid a:hover {
+  color: #ffffff;
 }
 
 .footer-copy {
@@ -398,17 +411,4 @@ h1 {
     grid-template-columns: 1fr;
     gap: 18px;
   }
-
-.footer-grid > div {
-  min-width: 0;
-}
-
-.footer-grid a {
-  color: #d7dbe0;
-  text-decoration: none;
-}
-
-.footer-grid a:hover {
-  color: #ffffff;
-}
 }

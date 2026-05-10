@@ -22,14 +22,14 @@
         </a>
 
         <div class="nav-area">
-        <nav class="main-nav">
-  <a href="index-en.html" class="nav-link">Home</a>
-  <a href="studio-en.html" class="nav-link active">Studio</a>
-  <a href="services-en.html" class="nav-link">Services</a>
-  <a href="specs-en.html" class="nav-link">Specs</a>
-  <a href="faq-en.html" class="nav-link">FAQ</a>
-  <a href="contact-en.html" class="nav-link">Contact</a>
-</nav>
+          <nav class="main-nav">
+            <a href="index-en.html" class="nav-link">Home</a>
+            <a href="studio-en.html" class="nav-link active">Studio</a>
+            <a href="services-en.html" class="nav-link">Services</a>
+            <a href="specs-en.html" class="nav-link">Specs</a>
+            <a href="faq-en.html" class="nav-link">FAQ</a>
+            <a href="contact-en.html" class="nav-link">Contact</a>
+          </nav>
 
           <div class="lang-switch">
             <a href="studio.html" class="lang-link">IT</a>
@@ -50,7 +50,7 @@
 
       <div class="hero-buttons">
         <a href="services-en.html" class="button button-secondary">Go to services</a>
-        <a href="index-en.html#contact" class="button button-primary">Contact us</a>
+        <a href="contact-en.html" class="button button-primary">Contact us</a>
       </div>
     </section>
 
@@ -64,6 +64,44 @@
         The goal is not only to achieve a technically correct sound,
         but to truly enhance the character of the track, its message and its intention.
       </p>
+    </section>
+
+    <section class="card">
+      <h2>The studio</h2>
+      <p>
+        A combination of listening, experience, digital tools and analog outboard,
+        all serving the final result.
+      </p>
+
+      <div class="studio-slider" id="studioSlider">
+        <div class="studio-track">
+          <div class="studio-slide">
+            <img src="images/studio-1.jpg" alt="Geco Studio wide setup view">
+          </div>
+
+          <div class="studio-slide">
+            <img src="images/studio-2.jpg" alt="Geco Studio monitors and workstation">
+          </div>
+
+          <div class="studio-slide">
+            <img src="images/studio-3.jpg" alt="Geco Studio outboard and processing">
+          </div>
+
+          <div class="studio-slide">
+            <img src="images/studio-4.jpg" alt="Geco Studio setup detail">
+          </div>
+        </div>
+
+        <button class="studio-slider-btn studio-slider-prev" id="studioPrev" type="button" aria-label="Previous image">‹</button>
+        <button class="studio-slider-btn studio-slider-next" id="studioNext" type="button" aria-label="Next image">›</button>
+
+        <div class="studio-slider-dots" id="studioDots">
+          <button class="studio-dot active" type="button" data-slide="0" aria-label="Go to slide 1"></button>
+          <button class="studio-dot" type="button" data-slide="1" aria-label="Go to slide 2"></button>
+          <button class="studio-dot" type="button" data-slide="2" aria-label="Go to slide 3"></button>
+          <button class="studio-dot" type="button" data-slide="3" aria-label="Go to slide 4"></button>
+        </div>
+      </div>
     </section>
 
     <section class="card">
@@ -154,5 +192,89 @@
       <p class="footer-copy">© Geco Studio</p>
     </footer>
   </main>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const slider = document.getElementById("studioSlider");
+    if (!slider) return;
+
+    const track = slider.querySelector(".studio-track");
+    const slides = slider.querySelectorAll(".studio-slide");
+    const dots = slider.querySelectorAll(".studio-dot");
+    const prev = document.getElementById("studioPrev");
+    const next = document.getElementById("studioNext");
+
+    let currentIndex = 0;
+    let autoplay = null;
+
+    function updateSlider(index) {
+      if (index < 0) index = slides.length - 1;
+      if (index >= slides.length) index = 0;
+
+      currentIndex = index;
+
+      const sliderWidth = slider.clientWidth;
+      track.style.transform = "translate3d(-" + (index * sliderWidth) + "px, 0, 0)";
+
+      dots.forEach(function (dot, i) {
+        if (i === index) {
+          dot.classList.add("active");
+        } else {
+          dot.classList.remove("active");
+        }
+      });
+    }
+
+    function nextSlide() {
+      updateSlider(currentIndex + 1);
+    }
+
+    function prevSlide() {
+      updateSlider(currentIndex - 1);
+    }
+
+    function startAutoplay() {
+      stopAutoplay();
+      autoplay = setInterval(function () {
+        nextSlide();
+      }, 4500);
+    }
+
+    function stopAutoplay() {
+      if (autoplay) {
+        clearInterval(autoplay);
+        autoplay = null;
+      }
+    }
+
+    next.addEventListener("click", function () {
+      nextSlide();
+      startAutoplay();
+    });
+
+    prev.addEventListener("click", function () {
+      prevSlide();
+      startAutoplay();
+    });
+
+    dots.forEach(function (dot) {
+      dot.addEventListener("click", function () {
+        const index = parseInt(dot.getAttribute("data-slide"), 10);
+        updateSlider(index);
+        startAutoplay();
+      });
+    });
+
+    slider.addEventListener("mouseenter", stopAutoplay);
+    slider.addEventListener("mouseleave", startAutoplay);
+
+    window.addEventListener("resize", function () {
+      updateSlider(currentIndex);
+    });
+
+    updateSlider(0);
+    startAutoplay();
+  });
+  </script>
 </body>
 </html>

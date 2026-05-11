@@ -194,87 +194,88 @@
   </main>
 
   <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const slider = document.getElementById("studioSlider");
-    if (!slider) return;
+document.addEventListener("DOMContentLoaded", function () {
+  const slider = document.getElementById("studioSlider");
+  if (!slider) return;
 
-    const track = slider.querySelector(".studio-track");
-    const slides = slider.querySelectorAll(".studio-slide");
-    const dots = slider.querySelectorAll(".studio-dot");
-    const prev = document.getElementById("studioPrev");
-    const next = document.getElementById("studioNext");
+  const track = slider.querySelector(".studio-track");
+  const slides = slider.querySelectorAll(".studio-slide");
+  const dots = slider.querySelectorAll(".studio-dot");
+  const prev = document.getElementById("studioPrev");
+  const next = document.getElementById("studioNext");
 
-    let currentIndex = 0;
-    let autoplay = null;
+  let currentIndex = 0;
+  let autoplay = null;
 
-    function updateSlider(index) {
-      if (index < 0) index = slides.length - 1;
-      if (index >= slides.length) index = 0;
+  function updateSlider(index) {
+    if (index < 0) index = slides.length - 1;
+    if (index >= slides.length) index = 0;
 
-      currentIndex = index;
+    currentIndex = index;
 
-      const sliderWidth = slider.clientWidth;
-      track.style.transform = "translate3d(-" + (index * sliderWidth) + "px, 0, 0)";
+    const sliderWidth = slider.clientWidth;
+    track.style.transform = "translate3d(-" + (index * sliderWidth) + "px, 0, 0)";
 
-      dots.forEach(function (dot, i) {
-        if (i === index) {
-          dot.classList.add("active");
-        } else {
-          dot.classList.remove("active");
-        }
-      });
-    }
-
-    function nextSlide() {
-      updateSlider(currentIndex + 1);
-    }
-
-    function prevSlide() {
-      updateSlider(currentIndex - 1);
-    }
-
-    function startAutoplay() {
-      stopAutoplay();
-      autoplay = setInterval(function () {
-        nextSlide();
-      }, 4500);
-    }
-
-    function stopAutoplay() {
-      if (autoplay) {
-        clearInterval(autoplay);
-        autoplay = null;
+    dots.forEach(function (dot, i) {
+      if (i === index) {
+        dot.classList.add("active");
+      } else {
+        dot.classList.remove("active");
       }
-    }
+    });
+  }
 
-    next.addEventListener("click", function () {
+  function nextSlide() {
+    updateSlider(currentIndex + 1);
+  }
+
+  function prevSlide() {
+    updateSlider(currentIndex - 1);
+  }
+
+  function startAutoplay() {
+    stopAutoplay();
+    autoplay = setInterval(function () {
       nextSlide();
-      startAutoplay();
-    });
+    }, 4500);
+  }
 
-    prev.addEventListener("click", function () {
-      prevSlide();
-      startAutoplay();
-    });
+  function stopAutoplay() {
+    if (autoplay) {
+      clearInterval(autoplay);
+      autoplay = null;
+    }
+  }
 
-    dots.forEach(function (dot) {
-      dot.addEventListener("click", function () {
-        const index = parseInt(dot.getAttribute("data-slide"), 10);
-        updateSlider(index);
-        startAutoplay();
-      });
-    });
-
-    slider.addEventListener("mouseenter", stopAutoplay);
-    slider.addEventListener("mouseleave", startAutoplay);
-
-    window.addEventListener("resize", function () {
-      updateSlider(currentIndex);
-    });
-
-    updateSlider(0);
+  next.addEventListener("click", function () {
+    nextSlide();
     startAutoplay();
   });
-  </script>
+
+  prev.addEventListener("click", function () {
+    prevSlide();
+    startAutoplay();
+  });
+
+  dots.forEach(function (dot) {
+    dot.addEventListener("click", function () {
+      const index = parseInt(dot.getAttribute("data-slide"), 10);
+      updateSlider(index);
+      startAutoplay();
+    });
+  });
+
+  slider.addEventListener("mouseenter", stopAutoplay);
+  slider.addEventListener("mouseleave", startAutoplay);
+
+  window.addEventListener("resize", function () {
+    updateSlider(currentIndex);
+  });
+
+  updateSlider(0);
+  startAutoplay();
+});
+</script>
+
 </body>
 </html>

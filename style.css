@@ -560,3 +560,68 @@ h1 {
     right: 10px;
   }
 }
+
+.quote-form {
+  margin-top: 18px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-field-full {
+  grid-column: span 2;
+}
+
+.form-field label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #f4f4f4;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  padding: 14px 15px;
+  border: 1px solid #313844;
+  border-radius: 14px;
+  background: #11151b;
+  color: #f4f4f4;
+  font: inherit;
+  outline: none;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  border-color: #9fb39f;
+  box-shadow: 0 0 0 3px rgba(159, 179, 159, 0.16);
+}
+
+.form-field textarea {
+  resize: vertical;
+  min-height: 180px;
+}
+
+.form-actions {
+  margin-top: 22px;
+}
+
+@media (max-width: 800px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-field-full {
+    grid-column: span 1;
+  }
+}

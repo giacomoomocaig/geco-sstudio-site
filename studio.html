@@ -198,6 +198,8 @@
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   const slider = document.getElementById("studioSlider");
+  if (!slider) return;
+
   const track = slider.querySelector(".studio-track");
   const slides = slider.querySelectorAll(".studio-slide");
   const dots = slider.querySelectorAll(".studio-dot");
@@ -212,7 +214,10 @@ document.addEventListener("DOMContentLoaded", function () {
     if (index >= slides.length) index = 0;
 
     currentIndex = index;
-    track.style.transform = "translateX(-" + (index * 25) + "%)";
+
+    const sliderWidth = slider.clientWidth;
+    track.style.transform = "translate3d(-" + (index * sliderWidth) + "px, 0, 0)";
+
     dots.forEach(function (dot, i) {
       if (i === index) {
         dot.classList.add("active");
@@ -264,6 +269,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   slider.addEventListener("mouseenter", stopAutoplay);
   slider.addEventListener("mouseleave", startAutoplay);
+
+  window.addEventListener("resize", function () {
+    updateSlider(currentIndex);
+  });
 
   updateSlider(0);
   startAutoplay();

@@ -23,13 +23,13 @@
 
         <div class="nav-area">
           <nav class="main-nav">
-  <a href="index-en.html" class="nav-link">Home</a>
-  <a href="studio-en.html" class="nav-link">Studio</a>
-  <a href="services-en.html" class="nav-link">Services</a>
-  <a href="specs-en.html" class="nav-link">Specs</a>
-  <a href="faq-en.html" class="nav-link">FAQ</a>
-  <a href="contact-en.html" class="nav-link active">Contact</a>
-</nav>
+            <a href="index-en.html" class="nav-link">Home</a>
+            <a href="studio-en.html" class="nav-link">Studio</a>
+            <a href="services-en.html" class="nav-link">Services</a>
+            <a href="specs-en.html" class="nav-link">Specs</a>
+            <a href="faq-en.html" class="nav-link">FAQ</a>
+            <a href="contact-en.html" class="nav-link active">Contact</a>
+          </nav>
 
           <div class="lang-switch">
             <a href="contatti.html" class="lang-link">IT</a>
@@ -44,70 +44,77 @@
       <p class="eyebrow">Contact</p>
       <h1>Let’s talk about your project</h1>
       <p class="subtitle">
-        Write to us for a free quote and tell us about your project.
-        The more information you give us, the more accurately we can reply.
+        Fill in the form below. At the end, your email app will open with the message already prepared for Geco Studio.
       </p>
 
       <div class="hero-buttons">
-        <a href="mailto:geco-studio@protonmail.com?subject=Quote%20request%20-%20Geco%20Studio" class="button button-primary">Write to us now</a>
         <a href="services-en.html" class="button button-secondary">Go to services</a>
+        <a href="specs-en.html" class="button button-secondary">Read the specs</a>
       </div>
     </section>
 
     <section class="card">
-      <h2>Studio email</h2>
+      <h2>Quote request form</h2>
+
+      <form id="quoteFormEN" class="quote-form">
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="fullName">Full name</label>
+            <input type="text" id="fullName" name="fullName" required>
+          </div>
+
+          <div class="form-field">
+            <label for="projectName">Artist / project name</label>
+            <input type="text" id="projectName" name="projectName">
+          </div>
+
+          <div class="form-field">
+            <label for="contactEmail">Contact email</label>
+            <input type="email" id="contactEmail" name="contactEmail" required>
+          </div>
+
+          <div class="form-field">
+            <label for="requestedService">Requested service</label>
+            <select id="requestedService" name="requestedService" required>
+              <option value="">Select a service</option>
+              <option value="Mix">Mix</option>
+              <option value="Stereo Master">Stereo Master</option>
+              <option value="Stem Master">Stem Master</option>
+              <option value="Production / Arrangement">Production / Arrangement</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="trackCount">Number of tracks</label>
+            <input type="text" id="trackCount" name="trackCount">
+          </div>
+
+          <div class="form-field">
+            <label for="channelCount">Number of channels</label>
+            <input type="text" id="channelCount" name="channelCount">
+          </div>
+
+          <div class="form-field">
+            <label for="promoCode">Promo code</label>
+            <input type="text" id="promoCode" name="promoCode">
+          </div>
+
+          <div class="form-field form-field-full">
+            <label for="projectMessage">Project description</label>
+            <textarea id="projectMessage" name="projectMessage" rows="8" placeholder="Tell us about your project, the result you want to achieve, any sound references and any useful details."></textarea>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="button button-primary">Open pre-filled email</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Direct email</h2>
       <p><a href="mailto:geco-studio@protonmail.com">geco-studio@protonmail.com</a></p>
       <p class="contact-note">If you do not receive a reply, please check your spam folder as well.</p>
-    </section>
-
-    <section class="card">
-      <h2>What to include in your request</h2>
-      <div class="contact-box">
-        <ul class="contact-list">
-          <li>Full name</li>
-          <li>Artist or project name</li>
-          <li>Contact email</li>
-          <li>Requested service: Mix / Stereo Master / Stem Master</li>
-          <li>Number of tracks</li>
-          <li>Number of channels, if it is a mix</li>
-          <li>Promo code, if available</li>
-          <li>Short description of the project and the result you are aiming for</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="card">
-      <h2>Direct discussion</h2>
-      <p>
-        If needed, we are available for phone calls or video calls,
-        so we can better understand the project, expectations and desired artistic direction.
-      </p>
-    </section>
-
-    <section class="card">
-      <h2>Suggested email template</h2>
-      <div class="contact-box">
-        <p>Copy and customize this text:</p>
-        <div class="message-template">
-          <p>Hello Geco Studio,</p>
-          <p>I am writing to request a quote.</p>
-          <p><strong>Full name:</strong><br>...</p>
-          <p><strong>Artist / project name:</strong><br>...</p>
-          <p><strong>Requested service:</strong><br>...</p>
-          <p><strong>Number of tracks:</strong><br>...</p>
-          <p><strong>Number of channels:</strong><br>...</p>
-          <p><strong>Promo code:</strong><br>...</p>
-          <p><strong>Project description:</strong><br>...</p>
-          <p>Thank you.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="card">
-      <h2>Direct link</h2>
-      <a href="mailto:geco-studio@protonmail.com?subject=Quote%20request%20-%20Geco%20Studio" class="button button-primary">
-        Open email
-      </a>
     </section>
 
     <footer class="footer footer-extended">
@@ -136,5 +143,48 @@
       <p class="footer-copy">© Geco Studio</p>
     </footer>
   </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.getElementById("quoteFormEN");
+      if (!form) return;
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const fullName = document.getElementById("fullName").value.trim();
+        const projectName = document.getElementById("projectName").value.trim();
+        const contactEmail = document.getElementById("contactEmail").value.trim();
+        const requestedService = document.getElementById("requestedService").value.trim();
+        const trackCount = document.getElementById("trackCount").value.trim();
+        const channelCount = document.getElementById("channelCount").value.trim();
+        const promoCode = document.getElementById("promoCode").value.trim();
+        const projectMessage = document.getElementById("projectMessage").value.trim();
+
+        const subject = encodeURIComponent("Quote request - Geco Studio");
+
+        const body = encodeURIComponent(
+`Hello Geco Studio,
+
+I am writing to request a quote.
+
+Full name: ${fullName}
+Artist / project name: ${projectName}
+Contact email: ${contactEmail}
+Requested service: ${requestedService}
+Number of tracks: ${trackCount}
+Number of channels: ${channelCount}
+Promo code: ${promoCode}
+
+Project description:
+${projectMessage}
+
+Thank you.`
+        );
+
+        window.location.href = `mailto:geco-studio@protonmail.com?subject=${subject}&body=${body}`;
+      });
+    });
+  </script>
 </body>
 </html>
